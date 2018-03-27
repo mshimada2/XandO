@@ -55,7 +55,7 @@ int main()
 
             board[row][column] = turn;
 
-    }
+    
 
             if(turn == 'X')
             {
@@ -73,7 +73,7 @@ int main()
             }
 
 
-        
+    }    
 
     cout<<"\nBOARD\n-----\n";
    
