@@ -87,7 +87,7 @@ int main()
    
    
     } 
-    cout<<" "<<endl;
+    cout<<endl;
     }
    //TODO: Print the current board
     //Outline
