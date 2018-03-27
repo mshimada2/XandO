@@ -49,8 +49,47 @@ int main()
     //1-C.  In any other case, then...
     //1-C-1.  turn should be assigned the value 'X'
     
+    else
+    {
+
+
+            board[row][column] = turn;
+
+    }
+
+            if(turn == 'X')
+            {
+
+                turn = O;
+
+            }
+
+
+            else
+            {
+
+            turn = X;
+
+            }
+
+
+        
+
     cout<<"\nBOARD\n-----\n";
-    //TODO: Print the current board
+   
+   for(int r = 0; r < ROWS; r++)
+   {
+    
+    for(int c = 0; c < COLUMNS; c++)
+    {
+
+       cout<<board[r][c]<<" ";
+   
+   
+    } 
+    cout<<" "<<endl;
+    }
+   //TODO: Print the current board
     //Outline
     //1. Traverse through each row, calling the current row r
     //1-A. Traverse through each column in row r, calling the current column c
