@@ -91,46 +91,52 @@ int main()
     cout<<endl;
     }
       
-  if(board[0][0] == board[0][1]  && board[0][0] == board[0][2] || board[0][0] == board[1][0] && board[0][0] == board[2][0] || board[0][0] == board [1][1] && board[0][0] == board[2][2] && board[ROWS][COLUMNS] != ' ')
+  if(board[0][0] == board[0][1]  && board[0][0] == board[0][2] && board[0][0] != ' ' || board[0][0] == board[1][0] && board[0][0] == board[2][0] && board[0][0] != ' ' || board[0][0] == board [1][1] && board[0][0] == board[2][2] && board[0][0] != ' ')
   {
     
 
       winner = board[0][0]; 
-
+      playing = false;
       cout<<"Winner is "<<winner<<endl;
-
+     
   }
 
- else if(board[0][2] == board[1][2] && board[0][2] == board[2][2] || board[0][2] == board[1][1] && board[0][2] == board[2][0])
+ else if(board[0][2] == board[1][2] && board[0][2] == board[2][2] && board[0][2] != ' ' || board[0][2] == board[1][1] && board[0][2] == board[2][0] && board[0][2] != ' ')
  {
    winner = board[0][2];
+   playing = false;
    cout<<"Winner is "<<winner<<endl;
+   
 
  }
 
-  else if(board[0][1] == board[1][1] && board[0][1] == board[1][2])
+  else if(board[0][1] == board[1][1] && board[0][1] == board[1][2] && board[0][1] != ' ')
   {
 
     winner = board[0][1];
+    playing = false;
     cout<<"Winner is "<<winner<<endl;
-
+   
   }
 
-  else if(board[1][0] == board[1][1] && board[1][0] == board[1][2])
+  else if(board[1][0] == board[1][1] && board[1][0] == board[1][2] && board[1][0] != ' ')
   {
 
     winner = board[1][0];
+    playing = false;
     cout<<"Winner is "<<winner<<endl;
-
+ 
   }
 
-  else if(board[2][0] == board[1][2] && board[2][0] == board[2][2]) 
+  else if(board[2][0] == board[1][2] && board[2][0] == board[2][2] && board[2][0] != ' ') 
   {
 
     winner = board[2][0];
+    playing = false;
     cout<<"Winner is "<<winner<<endl;
-
+    
   }
+  
 
   }while( playing );
 
