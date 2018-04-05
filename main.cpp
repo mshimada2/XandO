@@ -1,6 +1,6 @@
 //Author:
 #include <iostream>
-
+#include <vector>
 using namespace std;
 
 //GLOBAL CONSTANTS
@@ -18,11 +18,11 @@ int main()
                                {BLANK, BLANK, BLANK},
                                {BLANK, BLANK, BLANK}};
 
-  char turn = X; //Player X always goes first
+  char turn = X; //Player X always goes first;    [0][0] = winner do different combinations set equal to winner as long as space is good 
   int row;
   int column;
   bool playing = true; //Continue playing by default
-
+  char winner = ' ';
   do
   {
     cout<<turn<<"'s turn.\n";
@@ -84,22 +84,58 @@ int main()
     {
 
        cout<<board[r][c]<<" ";
-   
+  
+       
    
     } 
     cout<<endl;
     }
-   //TODO: Print the current board
-    //Outline
-    //1. Traverse through each row, calling the current row r
-    //1-A. Traverse through each column in row r, calling the current column c
-    //1-A-1.  Display the value of the board at location of r and c
-    //1-A-2. Display a space
-    //1-B. Display an newline to move to the next row of the board
+      
+  if(board[0][0] == board[0][1]  && board[0][0] == board[0][2] || board[0][0] == board[1][0] && board[0][0] == board[2][0] || board[0][0] == board [1][1] && board[0][0] == board[2][2] && board[ROWS][COLUMNS] != ' ')
+  {
     
+
+      winner = board[0][0]; 
+
+      cout<<"Winner is "<<winner<<endl;
+
+  }
+
+ else if(board[0][2] == board[1][2] && board[0][2] == board[2][2] || board[0][2] == board[1][1] && board[0][2] == board[2][0])
+ {
+   winner = board[0][2];
+   cout<<"Winner is "<<winner<<endl;
+
+ }
+
+  else if(board[0][1] == board[1][1] && board[0][1] == board[1][2])
+  {
+
+    winner = board[0][1];
+    cout<<"Winner is "<<winner<<endl;
+
+  }
+
+  else if(board[1][0] == board[1][1] && board[1][0] == board[1][2])
+  {
+
+    winner = board[1][0];
+    cout<<"Winner is "<<winner<<endl;
+
+  }
+
+  else if(board[2][0] == board[1][2] && board[2][0] == board[2][2]) 
+  {
+
+    winner = board[2][0];
+    cout<<"Winner is "<<winner<<endl;
+
+  }
+
   }while( playing );
 
   cout<<"Goodbye!\n";
 
   return 0;
 }
+//winner == board[0][0];
